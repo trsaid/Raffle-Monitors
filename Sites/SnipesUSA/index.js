@@ -1,8 +1,8 @@
-const Logger = require('../../Tools/Logger');
-const Helper = require('../../Tools/Helper');
+const Logger = require('../../tools/Logger');
+const Helper = require('../../tools/Helper');
 const Config = require('../../config/Config.json');
 const sendWebhook = require('./sendWebhook');
-const logReleases = require('../../Tools/LogReleases');
+const logReleases = require('../../tools/LogReleases');
 
 const axios = require('axios');
 const chalk = require('chalk');

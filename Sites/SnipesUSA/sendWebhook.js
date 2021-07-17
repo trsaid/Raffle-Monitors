@@ -1,5 +1,5 @@
 const Config = require('../../config/Config.json');
-const Logger = require('../../Tools/Logger');
+const Logger = require('../../tools/Logger');
 
 const axios = require('axios');
 
