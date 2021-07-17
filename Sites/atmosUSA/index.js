@@ -12,6 +12,7 @@ let activeReleases = [];
 
 const main = async () => {
   clear();
+  let firstRun = true;
 
   while (true) {
     Logger.log('Monitoring atmosUSA releases...');
@@ -29,12 +30,13 @@ const main = async () => {
         Logger.log(chalk.yellowBright('Sending Webhook...'));
         console.log();
         activeReleases.push(release);
-        await sendWebhook(release);
+        if (!firstRun) await sendWebhook(release);
       }
     }
     logReleases(activeReleases);
 
     await Helper.sleep(Config.delay);
+    firstRun = false;
   }
 };
 
@@ -52,6 +54,7 @@ const getRafflePage = async (url) => {
     if (res.status === 200) return parseData(res.data);
   } catch (err) {
     Logger.error(err);
+    return [];
   }
 };
 

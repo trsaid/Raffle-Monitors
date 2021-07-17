@@ -13,6 +13,7 @@ let activeReleases = [];
 
 const main = async () => {
   clear();
+  let firstRun = true;
 
   while (true) {
     Logger.log('Monitoring Lapstone & Hammer releases...');
@@ -30,12 +31,13 @@ const main = async () => {
         Logger.log(chalk.yellowBright('Sending Webhook...'));
         console.log();
         activeReleases.push(release);
-        await sendWebhook(release);
+        if (!firstRun) await sendWebhook(release);
       }
     }
     logReleases(activeReleases);
 
     await Helper.sleep(Config.delay);
+    firstRun = false;
   }
 };
 
@@ -50,6 +52,7 @@ const getRafflePage = async (url) => {
     if (res.status === 200) return parseHTML(res.data);
   } catch (err) {
     Logger.error(err);
+    return [];
   }
 };
 
