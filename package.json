@@ -1,0 +1,24 @@
+{
+  "name": "raffle-monitors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "atmos": "node ./Sites/atmosUSA/index.js",
+    "cw": "node ./Sites/Commonwealth/index.js",
+    "lh": "node \"./Sites/Lapstone & Hammer/index.js\"",
+    "snipes": "node ./Sites/SnipesUSA/index.js",
+    "tb": "node ./Sites/TresBien/index.js",
+    "airbnb": "node ./Sites/Airbnb/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "axios-https-proxy-fix": "^0.17.1",
+    "chalk": "^4.1.1",
+    "cheerio": "^1.0.0-rc.10",
+    "clear": "^0.1.0"
+  }
+}
