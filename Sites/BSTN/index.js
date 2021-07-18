@@ -32,8 +32,8 @@ const main = async () => {
         if (!firstRun) {
           console.log();
           Logger.log(chalk.yellowBright('Sending Webhook...'));
+          await sendWebhook(release, site);
         }
-        await sendWebhook(release, site);
       }
     }
     logReleases(activeReleases);
