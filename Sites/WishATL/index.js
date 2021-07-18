@@ -47,9 +47,19 @@ const getRafflePage = async (url) => {
     method: 'POST',
     url,
     headers: {
+      accept: '*/*',
+      'accept-language': 'en-US,en;q=0.9',
       'content-type': 'application/json',
+      origin: 'https://www.soleretriever.com',
+      referer: 'https://www.soleretriever.com/',
+      'sec-ch-ua':
+        '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+      'sec-ch-ua-mobile': '?0',
+      'sec-fetch-dest': 'empty',
+      'sec-fetch-mode': 'cors',
+      'sec-fetch-site': 'same-site',
       'user-agent':
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     },
     data: {
       query:
