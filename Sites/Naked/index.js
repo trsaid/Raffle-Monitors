@@ -38,7 +38,7 @@ const main = async () => {
     }
     logReleases(activeReleases);
 
-    await Helper.sleep(Config.delay);
+    await Helper.sleep(Config.proxyDelay);
     firstRun = false;
   }
 };
