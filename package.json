@@ -7,6 +7,7 @@
     "atmos": "node ./Sites/atmosUSA/index.js",
     "cw": "node ./Sites/Commonwealth/index.js",
     "lh": "node \"./Sites/Lapstone & Hammer/index.js\"",
+    "naked": "node ./Sites/Naked/index.js",
     "snipes": "node ./Sites/SnipesUSA/index.js",
     "tb": "node ./Sites/TresBien/index.js",
     "wish": "node ./Sites/WishATL/index.js",
