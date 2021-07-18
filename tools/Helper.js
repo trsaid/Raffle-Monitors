@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 class Helper {
   static sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -9,6 +11,37 @@ class Helper {
 
   static randomNumRange(min, max) {
     return Math.floor(min + Math.random() * max);
+  }
+
+  static getProxy(part = undefined) {
+    if (!part) return process.env.PROXY;
+
+    const proxyArr = process.env.PROXY.split(':');
+    const proxyObject = {
+      host: proxyArr[0],
+      port: proxyArr[1],
+      auth: {
+        username: proxyArr[2],
+        password: proxyArr[3]
+      }
+    };
+
+    switch (part) {
+      case 'host':
+        return proxyObject.host;
+
+      case 'port':
+        return proxyObject.port;
+
+      case 'username':
+        return proxyObject.auth.username;
+
+      case 'password':
+        return proxyObject.auth.password;
+
+      default:
+        return process.env.PROXY;
+    }
   }
 }
 

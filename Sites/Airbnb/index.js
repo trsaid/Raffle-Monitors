@@ -44,16 +44,6 @@ const getQuery = async (url) => {
     const res = await axios({
       method: 'GET',
       url,
-      proxy: {
-        protocol: 'http',
-        host: 'nzl.resi.runproxies.co',
-        port: 7932,
-        auth: {
-          username: '8XlAT69D',
-          password:
-            '1kINbDcpeLPZxddIOFG6wc6EUNe2YM4BvDN07aAuf2Z5JoDBqJFk0pOlQE7pMJybDQdcd-WGfGDSaN'
-        }
-      },
       timeout: 30000
     });
     if (res.status === 200) return parseData(res.data);
