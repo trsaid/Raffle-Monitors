@@ -9,6 +9,7 @@
     "lh": "node \"./Sites/Lapstone & Hammer/index.js\"",
     "snipes": "node ./Sites/SnipesUSA/index.js",
     "tb": "node ./Sites/TresBien/index.js",
+    "wish": "node ./Sites/WishATL/index.js",
     "airbnb": "node ./Sites/Airbnb/index.js"
   },
   "keywords": [],
