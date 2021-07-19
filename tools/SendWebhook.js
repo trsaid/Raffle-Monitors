@@ -1,29 +1,27 @@
-const Config = require('../../config/Config.json');
-const Logger = require('../../tools/Logger');
+const Config = require('../config/Config.json');
+const Logger = require('./Logger');
 
 const axios = require('axios');
 
-const sendWebhook = async (data, site) => {
+/**
+ *
+ * @param {string} site name of site
+ * @param {object} data release data - data.title, data.url, and data.imgURL are all required
+ * @param {string} iconURL site icon url
+ * @param {array} fields array of embed fields
+ */
+const SendWebhook = async (site, data, iconURL, fields) => {
+  site = site === 'LapstoneHammer' ? 'Lapstone & Hammer' : site;
   try {
     const webhookFormat = {
       embeds: [
         {
           color: 5301186,
-          fields: [
-            { name: '**Title**', value: data.title, inline: true },
-            { name: '**Store**', value: site, inline: true },
-            { name: '\u200b', value: '\u200b', inline: true }, // spacing field
-            { name: '**End Date**', value: data.endDate, inline: true },
-            { name: '**Locale**', value: data.locale, inline: true },
-            {
-              name: '**URL**',
-              value: data.url
-            }
-          ],
+          fields,
           author: {
             name: data.title,
             url: data.url,
-            icon_url: 'https://www.fashionsauce.com/img/stores/bstn-store.png'
+            icon_url: iconURL
           },
           footer: {
             text: '@trippiereedd',
@@ -37,7 +35,7 @@ const sendWebhook = async (data, site) => {
         }
       ],
       username: `${site} Monitor`,
-      avatar_url: 'https://www.fashionsauce.com/img/stores/bstn-store.png'
+      avatar_url: iconURL
     };
 
     const options = {
@@ -56,4 +54,4 @@ const sendWebhook = async (data, site) => {
   }
 };
 
-module.exports = sendWebhook;
+module.exports = SendWebhook;
