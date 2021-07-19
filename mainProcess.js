@@ -64,16 +64,16 @@ const main = async () => {
       if (!releaseFound) {
         Logger.log(`New release found - ${chalk.whiteBright(release.title)}`);
         activeReleases.push(release);
-        // if (!firstRun) {
-        Logger.log(chalk.yellowBright('Sending Webhook...'));
-        console.log();
-        SendWebhook(
-          site,
-          release,
-          siteObj.getIcon(),
-          siteObj.getWebhookFields(release)
-        );
-        // }
+        if (!firstRun) {
+          Logger.log(chalk.yellowBright('Sending Webhook...'));
+          console.log();
+          SendWebhook(
+            site,
+            release,
+            siteObj.getIcon(),
+            siteObj.getWebhookFields(release)
+          );
+        }
       }
     }
     LogReleases(activeReleases);
