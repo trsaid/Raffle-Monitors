@@ -5,6 +5,7 @@
 - atmosUSA
 - BSTN
 - Commonwealth PH
+- Kith
 - Lapstone & Hammer
 - Naked
 - SnipesUSA

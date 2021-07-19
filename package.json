@@ -7,6 +7,7 @@
     "atmos": "node ./Sites/atmosUSA/index.js",
     "bstn": "node ./Sites/BSTN/index.js",
     "cw": "node ./Sites/Commonwealth/index.js",
+    "kith": "node ./Sites/Kith/index.js",
     "lh": "node \"./Sites/Lapstone & Hammer/index.js\"",
     "naked": "node ./Sites/Naked/index.js",
     "snipes": "node ./Sites/SnipesUSA/index.js",
