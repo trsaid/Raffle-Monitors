@@ -7,6 +7,7 @@
     "atmos": "node mainProcess.js atmosUSA",
     "bstn": "node mainProcess.js BSTN",
     "cw": "node mainProcess.js Commonwealth",
+    "dsmny": "node mainProcess.js DSMNY",
     "kith": "node mainProcess.js Kith",
     "lh": "node mainProcess.js LapstoneHammer",
     "naked": "node mainProcess.js Naked",

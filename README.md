@@ -5,6 +5,7 @@
 - atmosUSA
 - BSTN
 - Commonwealth PH
+- DSMNY
 - Kith
 - Lapstone & Hammer
 - Naked
@@ -25,6 +26,7 @@ Valid site names:
 - atmosUSA
 - BSTN
 - Commonwealth
+- DSMNY
 - Kith
 - LapstoneHammer
 - Naked

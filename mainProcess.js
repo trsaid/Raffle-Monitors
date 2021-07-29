@@ -11,6 +11,7 @@ const validSites = [
   'atmosUSA',
   'BSTN',
   'Commonwealth',
+  'DSMNY',
   'Kith',
   'LapstoneHammer',
   'Naked',
@@ -23,6 +24,7 @@ const {
   atmosUSA,
   BSTN,
   Commonwealth,
+  DSMNY,
   Kith,
   LapstoneHammer,
   Naked,
@@ -35,6 +37,7 @@ const constructors = {
   atmosUSA,
   BSTN,
   Commonwealth,
+  DSMNY,
   Kith,
   LapstoneHammer,
   Naked,
@@ -64,16 +67,16 @@ const main = async () => {
       if (!releaseFound) {
         Logger.log(`New release found - ${chalk.whiteBright(release.title)}`);
         activeReleases.push(release);
-        if (!firstRun) {
-          Logger.log(chalk.yellowBright('Sending Webhook...'));
-          console.log();
-          SendWebhook(
-            site,
-            release,
-            siteObj.getIcon(),
-            siteObj.getWebhookFields(release)
-          );
-        }
+        // if (!firstRun) {
+        Logger.log(chalk.yellowBright('Sending Webhook...'));
+        console.log();
+        SendWebhook(
+          site,
+          release,
+          siteObj.getIcon(),
+          siteObj.getWebhookFields(release)
+        );
+        // }
       }
     }
     LogReleases(activeReleases);
@@ -84,8 +87,8 @@ const main = async () => {
 };
 
 const checkArguments = () => {
-  const site = process.argv[2];
-  // const site = 'Kith';
+  // const site = process.argv[2];
+  const site = 'DSMNY';
 
   if (!site) {
     Logger.error('Please provide a valid site as args');
