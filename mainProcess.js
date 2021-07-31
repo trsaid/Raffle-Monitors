@@ -52,6 +52,7 @@ const main = async () => {
   let activeReleases = [];
   const site = checkArguments();
   const siteObj = new constructors[site]();
+  checkProxy(siteObj);
 
   let firstRun = true;
   while (true) {
@@ -87,8 +88,8 @@ const main = async () => {
 };
 
 const checkArguments = () => {
-  const site = process.argv[2];
-  // const site = 'DSMNY';
+  // const site = process.argv[2];
+  const site = 'BSTN';
 
   if (!site) {
     Logger.error('Please provide a valid site as args');
@@ -107,6 +108,21 @@ const checkArguments = () => {
   }
 
   return site;
+};
+
+const checkProxy = (siteObj) => {
+  if (!siteObj.proxy) return; // return if no proxy required
+
+  const proxy = Helper.getProxy();
+
+  if (!proxy) {
+    Logger.error(
+      `Please provide a proxy in the .env file before running ${siteObj.site} monitor`
+    );
+    process.exit();
+  }
+
+  return;
 };
 
 main();
