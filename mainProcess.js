@@ -88,8 +88,8 @@ const main = async () => {
 };
 
 const checkArguments = () => {
-  // const site = process.argv[2];
-  const site = 'BSTN';
+  const site = process.argv[2];
+  // const site = 'BSTN';
 
   if (!site) {
     Logger.error('Please provide a valid site as args');

@@ -28,6 +28,7 @@ class Kith {
     try {
       const res = await axios(options);
       if (res.status === 200) return this.parseData(res.data);
+      throw `Unexpected response from ${this.site} monitor endpoint`;
     } catch (err) {
       Logger.error(err);
       return [];
