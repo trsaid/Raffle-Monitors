@@ -14,10 +14,10 @@ class Helper {
     return Math.floor(min + Math.random() * max);
   }
 
-  static getProxy(part = undefined) {
+  static getProxy(part = undefined, id = '') {
     if (!part) return process.env.PROXY;
 
-    const proxyArr = process.env.PROXY.split(':');
+    const proxyArr = process.env[`PROXY${id}`].split(':');
     const proxyObject = {
       host: proxyArr[0],
       port: proxyArr[1],
